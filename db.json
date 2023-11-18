@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "content": "json-server를 배워봅시다."
+    }
+  ],
+  "comments": [
+    {
+      "comment": "ㅂㅈㄷㅂㅈㄷ",
+      "id": 3
+    },
+    {
+      "comment": "ㅂㅈㄷㅈㅂㄷ",
+      "id": 4
+    },
+    {
+      "comment": "ㅈㅂㄷㅈㅂㄷㅈㅂㄷㅂㅈㄷ",
+      "id": 5
+    }
+  ]
+}
