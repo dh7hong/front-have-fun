@@ -1,5 +1,5 @@
 # front-have-fun
-User-Login-Signup (Login, Register, Logout) 
+Login-Signup-Logout-Auth (Login, Register, Logout, Authenticate) 
 
 Board (Show Board, Click and move to Board-Detail and Board 만들기)
 
