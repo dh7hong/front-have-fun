@@ -8,27 +8,29 @@ import { v4 as uuidv4 } from "uuid";
 export default function DetailedPage() {
   const navigate = useNavigate();
   const params = useParams();
-  const [likedCount, setLikedCount] = useState(0);
+
+  console.log("params", params);
+  // const [likedCount, setLikedCount] = useState(0);
   const queryClient = useQueryClient();
   const { data } = useQuery("post", getPost);
   const [isActive, setIsActive] = useState(false);
   const [comment, setComment] = useState("");
 
-  useEffect(() => {
-    if (data) {
-      const post = data.find((post) => post.id === params.id);
-      setLikedCount(post?.likedCount || 0);
-      setIsActive(post?.isActive);
-    }
-  }, [data, params.id]);
+  // useEffect(() => {
+  //   if (data) {
+  //     const post = data.find((post) => post.postId === parseInt(params.postId));
+  //     setLikedCount(post?.likedCount || 0);
+  //     setIsActive(post?.isActive);
+  //   }
+  // }, [data, params.postId]);
 
   //마운트 된 이후
 
-  const mutation = useMutation(plusLikeCount, {
-    onSuccess: () => {
-      queryClient.invalidateQueries("post");
-    },
-  });
+  // const mutation = useMutation(plusLikeCount, {
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries("post");
+  //   },
+  // });
 
   const deleteMutation = useMutation(deletePost, {
     onSuccess: () => {
@@ -39,19 +41,21 @@ export default function DetailedPage() {
   const addCommentMutation = useMutation(addComment, {
     onSuccess: () => {},
   });
-  const detailedInfo = data?.find((post) => post.id === params.id);
+  const detailedInfo = data?.find(
+    (post) => post.postId === parseInt(params.postId)
+  );
 
-  const onClickLikeButton = (id) => () => {
-    const LikedCount = likedCount + 1;
-    mutation.mutate({ id, LikedCount, isActive: !isActive });
-    setIsActive(true);
-  };
+  // const onClickLikeButton = (id) => () => {
+  //   const LikedCount = likedCount + 1;
+  //   mutation.mutate({ id, LikedCount, isActive: !isActive });
+  //   setIsActive(true);
+  // };
 
-  const onClickDislikeButton = (id) => () => {
-    const LikedCount = likedCount - 1;
-    mutation.mutate({ id, LikedCount, isActive: !isActive });
-    setIsActive(false);
-  };
+  // const onClickDislikeButton = (id) => () => {
+  //   const LikedCount = likedCount - 1;
+  //   mutation.mutate({ id, LikedCount, isActive: !isActive });
+  //   setIsActive(false);
+  // };
 
   console.log("detailedInfo", detailedInfo);
 
@@ -82,7 +86,7 @@ export default function DetailedPage() {
       <S.NewBoardWrapper>
         <S.TitleStyle>{detailedInfo?.title}</S.TitleStyle>
         <S.ContentsStyle> {detailedInfo?.contents}</S.ContentsStyle>
-        <S.ThumbsWrapper>
+        {/* <S.ThumbsWrapper>
           {!isActive && (
             <S.ThumbsUpStyle
               size={30}
@@ -100,7 +104,7 @@ export default function DetailedPage() {
             </S.ColoredThumbsUp>
           )}
         </S.ThumbsWrapper>
-        좋아요 개수 : {detailedInfo?.likedCount}
+        좋아요 개수 : {detailedInfo?.likedCount} */}
       </S.NewBoardWrapper>
       <button onClick={moveToList}>목록으로</button>
       <button onClick={deleteBtn(detailedInfo?.id)}>삭제하기</button>

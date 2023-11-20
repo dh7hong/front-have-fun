@@ -56,4 +56,12 @@ export const addComment = async (target) => {
   } catch (error) {}
 };
 
-
+export const addImage = async (image) => {
+  try {
+    const response = await axios.post(
+      `${process.env.REACT_APP_GAME_URL}/images`,
+      image
+    );
+    return response;
+  } catch (error) {}
+};

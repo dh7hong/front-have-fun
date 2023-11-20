@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 export default function NewPost() {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
+  const [postId, setPostId] = useState(1);
   const navigate = useNavigate();
   const queryClient = new QueryClient();
   const mutation = useMutation(AddPost, {
@@ -24,11 +25,14 @@ export default function NewPost() {
   };
 
   const onClickSubmitBtn = () => {
+    const addId = postId + 1;
+    setPostId(addId);
+    // setPostId((prev) => prev + 1);
     const newPost = {
-      id: uuidv4(),
-      title,
-      contents,
-      likedCount: 0,
+      postId: postId,
+      title: title,
+      contents: contents,
+      // likedCount: 0,
       isActive: false,
     };
     mutation.mutate(newPost);

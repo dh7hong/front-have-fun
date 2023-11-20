@@ -1,60 +1,25 @@
 {
   "posts": [
     {
-      "id": "57794e32-24c5-4833-8a00-3814358376d2",
-      "title": "22",
-      "contents": "22",
-      "likedCount": 1,
-      "isActive": true
+      "postId": 1,
+      "title": "1",
+      "contents": "1",
+      "isActive": true,
+      "id": 1
     },
     {
-      "id": "64ac16e7-f298-4ab8-884e-d386a06dfdb1",
-      "title": "12312",
-      "contents": "3123123",
-      "likedCount": 1,
-      "isActive": true
+      "postId": 2,
+      "title": "2",
+      "contents": "2",
+      "isActive": false,
+      "id": 2
     },
     {
-      "id": "5223232e-8acc-4f97-97f5-4aacc5487ba1",
-      "title": "ㄴㅁㅇ",
-      "contents": "ㅁㄴㅇㅁㄴㅇ",
-      "likedCount": 1,
-      "isActive": true
-    },
-    {
-      "id": "ccecc972-1408-409a-b86e-813917256b5d",
-      "title": "123",
-      "contents": "123",
-      "likedCount": 0,
-      "isActive": false
-    },
-    {
-      "id": "773b21ba-322e-473c-ae9d-a6acf24bd3b3",
-      "title": "42",
-      "contents": "42",
-      "likedCount": 0,
-      "isActive": false
-    },
-    {
-      "id": "74b1db51-d109-443b-9be6-af468d6d6e23",
-      "title": "5345",
-      "contents": "345435",
-      "likedCount": 0,
-      "isActive": false
-    },
-    {
-      "id": "cf645673-1f18-4d49-8abf-3aad7075f68b",
-      "title": "78676",
-      "contents": "678678",
-      "likedCount": 0,
-      "isActive": false
-    },
-    {
-      "id": "a9e91d2f-2cec-451d-8692-4552d8af3be4",
-      "title": "12",
-      "contents": "12",
-      "likedCount": 0,
-      "isActive": false
+      "postId": 3,
+      "title": "3",
+      "contents": "3",
+      "isActive": false,
+      "id": 3
     }
   ],
   "comments": []

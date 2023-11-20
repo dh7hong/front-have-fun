@@ -1,21 +1,23 @@
 import React, { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addImage } from "../redux/modules/Image";
 import { resetImage } from "../redux/modules/Image";
 
 export default function MyPage() {
   const [isActive, setIsActive] = useState(false);
+  const [imageUrl, setImageUrl] = useState("");
   const dispatch = useDispatch();
-  const imageArr = useSelector((state) => state.songImage.imageArr);
   const ref = useRef(null);
 
   const onChangeImage = (event) => {
     const file = event.target.files?.[0];
+    console.log("file", file);
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
     fileReader.onload = (event) => {
       if (typeof event.target?.result === "string") {
         dispatch(addImage(event.target?.result));
+        setImageUrl(fileReader.result);
       }
     };
     setIsActive(true);
@@ -27,7 +29,7 @@ export default function MyPage() {
   const onClickDeleteImage = () => {
     dispatch(resetImage());
   };
-
+  console.log(imageUrl);
   return (
     <div>
       <div>song image url</div>
@@ -37,7 +39,7 @@ export default function MyPage() {
       {isActive && (
         <img
           style={{ width: "100px", height: "100px" }}
-          src={imageArr[0]}
+          src={imageUrl}
           alt="엑박"
         />
       )}

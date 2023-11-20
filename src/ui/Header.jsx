@@ -19,7 +19,7 @@ export default function Header() {
 
   const moveToMyPage = () => {
     navigate("/mypage");
-    setIsActive(false);
+    setIsActive(false)
   };
   return (
     <S.Wrapper>
@@ -30,7 +30,7 @@ export default function Header() {
           {imageArr[0] && (
             <S.MyProfileImage
               onClick={onClickProfileImage}
-              src={imageArr[0]}
+              src={imageArr}
               alt="엑박"
             />
           )}
