@@ -28,8 +28,15 @@ export default function NewPost() {
       id: uuidv4(),
       title,
       contents,
+      likedCount: 0,
+      isActive: false,
     };
     mutation.mutate(newPost);
+    alert("정상적으로 등록됐습니다");
+  };
+
+  const moveToBoard = () => {
+    navigate("/");
   };
   return (
     <div>
@@ -38,6 +45,7 @@ export default function NewPost() {
         내용: <input onChange={onChangeContents} />
       </div>
       <button onClick={onClickSubmitBtn}>등록하기</button>
+      <button onClick={moveToBoard}>목록가기</button>
     </div>
   );
 }
