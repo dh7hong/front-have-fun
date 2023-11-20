@@ -46,6 +46,8 @@ export default function Home() {
           <S.BoardTitle>작성날짜</S.BoardTitle>
           <S.BoardTitle>상세보기</S.BoardTitle>
         </S.BoardWrapper>
+
+        {/* search 기능 */}
         {!isActive && (
           <S.PostStyle>
             {data?.map((post) => (
