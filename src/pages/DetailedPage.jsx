@@ -10,10 +10,11 @@ export default function DetailedPage() {
   const params = useParams();
 
   console.log("params", params);
+
   // const [likedCount, setLikedCount] = useState(0);
   const queryClient = useQueryClient();
   const { data } = useQuery("post", getPost);
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
   const [comment, setComment] = useState("");
 
   // useEffect(() => {
@@ -45,15 +46,17 @@ export default function DetailedPage() {
     (post) => post.postId === parseInt(params.postId)
   );
 
-  // const onClickLikeButton = (id) => () => {
+  console.log("detailedInfo", detailedInfo);
+
+  // const onClickLikeButton = (postId) => () => {
   //   const LikedCount = likedCount + 1;
-  //   mutation.mutate({ id, LikedCount, isActive: !isActive });
+  //   mutation.mutate({ postId, LikedCount, isActive: !isActive });
   //   setIsActive(true);
   // };
 
   // const onClickDislikeButton = (id) => () => {
   //   const LikedCount = likedCount - 1;
-  //   mutation.mutate({ id, LikedCount, isActive: !isActive });
+  //   mutation.mutate({ postId, LikedCount, isActive: !isActive });
   //   setIsActive(false);
   // };
 
@@ -63,8 +66,8 @@ export default function DetailedPage() {
     navigate("/");
   };
 
-  const deleteBtn = (id) => () => {
-    deleteMutation.mutate(id);
+  const deleteBtn = (postId) => () => {
+    deleteMutation.mutate(postId);
     navigate("/");
   };
 
@@ -107,7 +110,7 @@ export default function DetailedPage() {
         좋아요 개수 : {detailedInfo?.likedCount} */}
       </S.NewBoardWrapper>
       <button onClick={moveToList}>목록으로</button>
-      <button onClick={deleteBtn(detailedInfo?.id)}>삭제하기</button>
+      <button onClick={deleteBtn(detailedInfo?.postId)}>삭제하기</button>
       <div>
         <h1>댓글</h1>
         <input onChange={onChangeComment} />

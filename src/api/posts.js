@@ -25,7 +25,7 @@ export const getPost = async () => {
 export const plusLikeCount = async (target) => {
   try {
     const response = await axios.patch(
-      `${process.env.REACT_APP_GAME_URL}/posts/${target.id}`,
+      `${process.env.REACT_APP_GAME_URL}/posts/${target.postId}`,
       {
         likedCount: target.LikedCount,
         isActive: target.isActive,
@@ -35,10 +35,10 @@ export const plusLikeCount = async (target) => {
   } catch (error) {}
 };
 
-export const deletePost = async (id) => {
+export const deletePost = async (postId) => {
   try {
     const response = await axios.delete(
-      `${process.env.REACT_APP_GAME_URL}/posts/${id}`
+      `${process.env.REACT_APP_GAME_URL}/posts/${postId}`
     );
 
     return response;

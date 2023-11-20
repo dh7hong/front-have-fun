@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const imageSlice = createSlice({
-  name: "songImage",
+  name: "image",
   initialState,
   reducers: {
     addImage: (state, action) => {

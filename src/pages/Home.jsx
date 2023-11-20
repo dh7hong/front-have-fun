@@ -51,14 +51,14 @@ export default function Home() {
         {!isActive && (
           <S.PostStyle>
             {data?.map((post) => (
-              <PostList post={post} />
+              <PostList key={post.postId} post={post} />
             ))}
           </S.PostStyle>
         )}
         {isActive && (
           <S.PostStyle>
             {searchPost?.map((post) => (
-              <PostList post={post} />
+              <PostList key={post.postId} post={post} />
             ))}
           </S.PostStyle>
         )}

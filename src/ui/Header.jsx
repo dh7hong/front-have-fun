@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import * as S from "../shared/style/HeaderStyle";
 import { useNavigate } from "react-router-dom";
-import { IoPersonCircle } from "react-icons/io5";
-import { useSelector } from "react-redux";
 
 export default function Header() {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
-  const imageArr = useSelector((state) => state.songImage.imageArr);
-  console.log(imageArr);
+
   const onClickProfileImage = () => {
     setIsActive((prev) => !prev);
   };
+
+  const image = localStorage.getItem("image");
 
   const moveToHome = () => {
     navigate("/");
@@ -19,7 +18,7 @@ export default function Header() {
 
   const moveToMyPage = () => {
     navigate("/mypage");
-    setIsActive(false)
+    setIsActive(false);
   };
   return (
     <S.Wrapper>
@@ -27,14 +26,14 @@ export default function Header() {
         <S.Logo onClick={moveToHome} />
         <S.TitleStyle>Hanghae Community</S.TitleStyle>
         <S.MyProfileStyle>
-          {imageArr[0] && (
+          {image && (
             <S.MyProfileImage
               onClick={onClickProfileImage}
-              src={imageArr}
+              src={image}
               alt="엑박"
             />
           )}
-          {!imageArr[0] && (
+          {!image && (
             <S.MyProfile
               onClick={onClickProfileImage}
               size={60}
