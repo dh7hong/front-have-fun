@@ -1,0 +1,126 @@
+{
+  "api": {
+    "posts": [
+      {
+        "title": "My first post",
+        "contents": "This is the body of the post",
+        "postId": 1,
+        "user": {
+          "username": "JohnDoe1",
+          "nickname": "se7en",
+          "userId": 1
+          },
+        "likes": {
+          "count" : 2,
+          "user": [
+                    {
+                      "username": "JohnDoe1",
+                      "nickname": "se7en",
+                      "userId": 1
+                      "liked": true
+                    },
+                    {
+                      "username": "Danny Hong",
+                      "nickname": "powerBlogger7",
+                      "userId": 2,
+                      "liked": true
+                    },
+                    {
+                      "username": "Danny Kim",
+                      "nickname": "powerRanger7",
+                      "userId": 3,
+                      "liked": false
+                    },
+                    {
+                      "username": "JohnDoe2", 
+                      "nickname": "se7en2",
+                      "userId": 4,
+                      "liked": false
+                    },
+                  ]
+                }
+      },
+        "comments": [
+          {
+            "contents": "First, make the Login layout.",
+            "commentId": 1,
+            "user": {
+              "username": "Danny Hong",
+              "nickname": "powerBlogger7",
+              "userId": 2
+              }
+          },
+          {
+            "contents": "We need to code the different components of logging in.",
+            "commentId": 2,
+            "user": {
+              "username": "Danny Kim",
+              "nickname": "powerRanger7",
+              "userId": 3
+              }
+          }
+        ]
+      },
+      {
+        "title": "My second post",
+        "contents": "This is the body of the second post",
+        "postId": 2,
+        "user": {
+          "username": "JohnDoe2",
+          "nickname": "se7en2",
+          "userId": 4
+        },
+        "likes": {
+          "count" : 2,
+          "user": [
+                    {
+                      "username": "JohnDoe1",
+                      "nickname": "se7en",
+                      "userId": 1
+                      "liked": true
+                    },
+                    {
+                      "username": "Danny Hong",
+                      "nickname": "powerBlogger7",
+                      "userId": 2,
+                      "liked": true
+                    },
+                    {
+                      "username": "Danny Kim",
+                      "nickname": "powerRanger7",
+                      "userId": 3,
+                      "liked": false
+                    },
+                    {
+                      "username": "JohnDoe2", 
+                      "nickname": "se7en2",
+                      "userId": 4,
+                      "liked": false
+                    },
+                  ]
+                }
+      },
+        "comments": [
+          {
+            "contents": "First, make the Login layout.",
+            "commentId": 3,
+            "user": {
+              "username": "Danny Hong",
+              "nickname": "powerBlogger7",
+              "userId": 2
+              }
+          },
+          {
+            "contents": "We need to code the different components of logging in.",
+            "commentId": 4,
+            "user": {
+              "username": "Danny Kim",
+              "nickname": "powerRanger7",
+              "userId": 3
+              }
+          }
+        ]
+      }
+    ]
+  }
+}
