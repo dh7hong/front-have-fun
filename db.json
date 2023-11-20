@@ -4,21 +4,18 @@
       "postId": 1,
       "title": "1",
       "contents": "1",
-      "isActive": true,
       "id": 1
     },
     {
       "postId": 2,
       "title": "2",
       "contents": "2",
-      "isActive": false,
       "id": 2
     },
     {
       "postId": 3,
       "title": "3",
       "contents": "3",
-      "isActive": false,
       "id": 3
     }
   ],

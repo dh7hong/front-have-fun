@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { QueryClient, useMutation } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { AddPost } from "../api/posts";
-import { v4 as uuidv4 } from "uuid";
 
 export default function NewPost() {
   const [title, setTitle] = useState("");
@@ -33,7 +32,7 @@ export default function NewPost() {
       title: title,
       contents: contents,
       // likedCount: 0,
-      isActive: false,
+      // isActive: false,
     };
     mutation.mutate(newPost);
     alert("정상적으로 등록됐습니다");
