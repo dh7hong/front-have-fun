@@ -1,0 +1,54 @@
+{
+    "posts": [
+      {
+        "title": "My first post",
+        "contents": "body",
+        "postId": 1,
+        "userId": 1
+      },
+      {
+        "title": "My second post",
+        "contents": "body",
+        "postId": 2,
+        "userId": 2
+      }
+    ],
+    "comments": [
+      {
+        "contents": "First, make the Login layout.",
+        "commentId": 1,
+        "postId": 1,
+        "userId": 2
+      },
+      {
+        "contents": "We need to code the different components of logging in.",
+        "commentId": 2,
+        "postId": 1,
+        "userId": 2
+      },
+      {
+        "contents": "Second, make the Login layout again.",
+        "commentId": 1,
+        "postId": 2,
+        "userId": 2
+      },
+      {
+        "contents": "Second, we need to code the different components of logging in.",
+        "commentId": 2,
+        "postId": 2,
+        "userId": 2
+      }
+    ],
+    "users": [
+      {
+        "username": "JohnDoe1",
+        "nickname": "se7en",
+        "userId": 1
+      },
+      {
+        "username": "Danny Hong",
+        "nickname": "powerBlogger7",
+        "userId": 2
+      }
+    ]
+}

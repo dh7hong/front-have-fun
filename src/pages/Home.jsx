@@ -14,7 +14,7 @@ export default function Home() {
   const { data } = useQuery("post", getPost);
   //data = 객체형태로 모든 값들 다있음
   const onClickSubmitBtn = () => {
-    navigate("/post");
+    navigate("/posts");
   };
   const onChangeKeyWord = (event) => {
     setKeyWord(event.target.value);

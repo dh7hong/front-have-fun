@@ -1,7 +1,11 @@
 const jsonServer = require('json-server');
+const cors = require('cors');
 const server = jsonServer.create();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router('db123.json');
 const middlewares = jsonServer.defaults();
+
+// Use CORS middleware
+server.use(cors());
 
 server.get('/api', (req, res) => {
   res.jsonp(router.db.getState());
@@ -28,12 +32,12 @@ server.get('/api/posts/:postId/comments', (req, res) => {
   res.jsonp(comments);
 });
 
-server.get('/api/posts/:postId/comments/:contentId', (req, res) => {
+server.get('/api/posts/:postId/comments/:commentId', (req, res) => {
   const postId = parseInt(req.params.postId);
-  const contentId = parseInt(req.params.contentId);
+  const commentId = parseInt(req.params.commentId);
   let comment = router.db
     .get('comments')
-    .find({ contentId, postId }) // Adjusted to use contentId and postId
+    .find({ commentId, postId }) // Adjusted to use commentId and postId
     .value();
 
   if (comment) {

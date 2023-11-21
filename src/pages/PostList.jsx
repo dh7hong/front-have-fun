@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function PostList({ post }) {
   const navigate = useNavigate();
   const moveToDetailedPage = (postId) => () => {
-    navigate(`/post/${postId}`);
+    navigate(`/posts/${postId}`);
   };
 
   return (

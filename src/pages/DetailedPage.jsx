@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { addComment, deletePost, getPost, plusLikeCount } from "../api/posts";
 import * as S from "../shared/style/DetailedPage";
 import { v4 as uuidv4 } from "uuid";
+import Comments from "../features/comments/Comments";
 
 export default function DetailedPage() {
   const navigate = useNavigate();
@@ -15,8 +16,7 @@ export default function DetailedPage() {
   const queryClient = useQueryClient();
   const { data } = useQuery("post", getPost);
   // const [isActive, setIsActive] = useState(false);
-  const [comment, setComment] = useState("");
-
+ 
   // useEffect(() => {
   //   if (data) {
   //     const post = data.find((post) => post.postId === parseInt(params.postId));
@@ -39,9 +39,7 @@ export default function DetailedPage() {
     },
   });
 
-  const addCommentMutation = useMutation(addComment, {
-    onSuccess: () => {},
-  });
+ 
   const detailedInfo = data?.find(
     (post) => post.postId === parseInt(params.postId)
   );
@@ -69,18 +67,6 @@ export default function DetailedPage() {
   const deleteBtn = (postId) => () => {
     deleteMutation.mutate(postId);
     navigate("/");
-  };
-
-  const onChangeComment = (event) => {
-    setComment(event.target.value);
-  };
-
-  const onClickMakeCommentBtn = () => {
-    const newComment = {
-      id: uuidv4(),
-      comment: comment,
-    };
-    addCommentMutation.mutate(newComment);
   };
 
   return (
@@ -112,9 +98,7 @@ export default function DetailedPage() {
       <button onClick={moveToList}>목록으로</button>
       <button onClick={deleteBtn(detailedInfo?.postId)}>삭제하기</button>
       <div>
-        <h1>댓글</h1>
-        <input onChange={onChangeComment} />
-        <button onClick={onClickMakeCommentBtn}>작성하기</button>
+        < Comments />
       </div>
     </S.DetailedPageWrapper>
   );
