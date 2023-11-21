@@ -26,3 +26,10 @@ export const detailedBtnWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const RowTitle = styled.span`
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+`;

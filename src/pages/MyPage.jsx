@@ -2,10 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { store } from "../redux/config/configStore";
 import { useDispatch } from "react-redux";
 import { addImage } from "../redux/modules/Image";
+import { useNavigate } from "react-router-dom";
+import * as S from "../shared/style/MyPageStyle";
 
 export default function MyPage() {
   const [isActive, setIsActive] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const ref = useRef(null);
 
@@ -28,8 +31,6 @@ export default function MyPage() {
       const fileReader = new FileReader();
       fileReader.readAsDataURL(file);
       fileReader.onload = (event) => {
-        dispatch(addImage(event.target?.result));
-        localStorage.setItem("image", fileReader.result);
         setImageUrl(fileReader.result);
       };
       setIsActive(true);
@@ -38,27 +39,46 @@ export default function MyPage() {
   const onClickImageBtn = () => {
     ref.current.click();
   };
+
+  const onClickSubmitBtn = () => {
+    localStorage.setItem("image", imageUrl);
+    dispatch(addImage(imageUrl));
+    alert("성공적으로 수정됐습니다");
+    navigate("/mypage");
+  };
   return (
-    <div>
-      <div>Profile image</div>
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {isActive && (
-          <img
-            style={{ width: "100px", height: "100px" }}
-            src={imageUrl}
-            alt="엑박"
-          />
-        )}
-        <button type="button" onClick={onClickImageBtn}>
-          이미지 업로드
-        </button>
-      </div>
-      <input
-        // style={{ display: "none" }}
-        ref={ref}
-        onChange={onChangeImage}
-        type="file"
-      />
-    </div>
+    <S.Wrapper>
+      <S.MyPageWrapper>
+        <h2>My Page</h2>
+        <div>Profile image</div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              border: "1px solid black",
+            }}
+          >
+            {isActive && (
+              <img
+                style={{ width: "100px", height: "100px" }}
+                src={imageUrl}
+                alt="엑박"
+              />
+            )}
+          </div>
+          <button type="button" onClick={onClickImageBtn}>
+            이미지 업로드
+          </button>
+          <button onClick={onClickSubmitBtn}>수정하기</button>
+        </div>
+        <input
+          style={{ display: "none" }}
+          ref={ref}
+          onChange={onChangeImage}
+          type="file"
+        />
+      </S.MyPageWrapper>
+    </S.Wrapper>
   );
 }

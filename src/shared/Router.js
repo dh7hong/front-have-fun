@@ -5,16 +5,26 @@ import Home from "../pages/Home";
 import NewPost from "../pages/NewPost";
 import DetailedPage from "../pages/DetailedPage";
 import MyPage from "../pages/MyPage";
+import Rpg from "../pages/Rpg";
+import Sports from "../pages/Sports";
+import Fps from "../pages/Fps";
+import Arcade from "../pages/Arcade";
+import Racing from "../pages/Racing";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path = "/" element={<Home />} />
-          <Route path="/post" element={<NewPost />} />
-          <Route path="/post/:postId" element={<DetailedPage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="api/post" element={<NewPost />} />
+          <Route path="/api/posts/:postId" element={<DetailedPage />} />
           <Route path="/mypage" element={<MyPage />} />
+          <Route path="/rpg" element={<Rpg />} />
+          <Route path="/sports" element={<Sports />} />
+          <Route path="/fps" element={<Fps />} />
+          <Route path="/arcade" element={<Arcade />} />
+          <Route path="/racing" element={<Racing />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
-import { addComment, deletePost, getPost, plusLikeCount } from "../api/posts";
+import {
+  addComment,
+  deletePost,
+  getOneBoardInfo,
+  getPost,
+  // plusLikeCount,
+} from "../api/posts";
 import * as S from "../shared/style/DetailedPage";
 import { v4 as uuidv4 } from "uuid";
+import { getDate } from "../util/Date";
 
 export default function DetailedPage() {
   const navigate = useNavigate();
   const params = useParams();
 
   console.log("params", params);
-
+  const { data } = useQuery("post", getPost);
   // const [likedCount, setLikedCount] = useState(0);
   const queryClient = useQueryClient();
-  const { data } = useQuery("post", getPost);
   // const [isActive, setIsActive] = useState(false);
   const [comment, setComment] = useState("");
 
@@ -25,17 +31,15 @@ export default function DetailedPage() {
   //   }
   // }, [data, params.postId]);
 
-  //마운트 된 이후
-
   // const mutation = useMutation(plusLikeCount, {
   //   onSuccess: () => {
-  //     queryClient.invalidateQueries("post");
+  //     queryClient.invalidateQueries("posts");
   //   },
   // });
 
   const deleteMutation = useMutation(deletePost, {
     onSuccess: () => {
-      queryClient.invalidateQueries("post");
+      queryClient.invalidateQueries("posts");
     },
   });
 
@@ -54,13 +58,13 @@ export default function DetailedPage() {
   //   setIsActive(true);
   // };
 
-  // const onClickDislikeButton = (id) => () => {
+  // const onClickDislikeButton = (postId) => () => {
   //   const LikedCount = likedCount - 1;
   //   mutation.mutate({ postId, LikedCount, isActive: !isActive });
   //   setIsActive(false);
   // };
 
-  console.log("detailedInfo", detailedInfo);
+
 
   const moveToList = () => {
     navigate("/");

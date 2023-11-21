@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { QueryClient, useMutation, useQuery } from "react-query";
+import { useQuery } from "react-query";
 import { AddPost, getPost } from "../api/posts";
 import * as S from "../shared/style/HomeStyle";
 import { useNavigate } from "react-router-dom";
@@ -11,19 +11,17 @@ export default function Home() {
   const [searchPost, setSearchPost] = useState([]);
 
   const navigate = useNavigate();
-  const { data } = useQuery("post", getPost);
+  const { data } = useQuery("posts", getPost);
   //data = 객체형태로 모든 값들 다있음
   const onClickSubmitBtn = () => {
-    navigate("/post");
+    navigate("/api/post");
   };
   const onChangeKeyWord = (event) => {
     setKeyWord(event.target.value);
   };
 
   const onClickSearchBtn = () => {
-    setSearchPost(data.filter((post) => post.title === keyWord));
-
-    console.log("searchPost", searchPost);
+    setSearchPost(data.filter((post) => post.title.includes(keyWord)));
     setIsActive(true);
   };
 
@@ -34,15 +32,21 @@ export default function Home() {
   return (
     <S.Wrapper>
       <S.HomeWrapper>
-        <div>
-          <input onChange={onChangeKeyWord} placeholder="제목을 입력해주세요" />
-          <button onClick={onClickSearchBtn}>검색</button>
-        </div>
-        <button onClick={onClickAllPost}>전체 글 보기</button>
-        <button onClick={onClickSubmitBtn}>등록하기</button>
+        <S.HeaderWrapper>
+          <h2> 자유게시판 </h2>
+          <div>
+            <S.SearchInput
+              value={keyWord}
+              onChange={onChangeKeyWord}
+              placeholder="제목을 입력해주세요"
+            />
+            <S.AllPostBtn onClick={onClickSearchBtn}>검색</S.AllPostBtn>
+            <S.AllPostBtn onClick={onClickAllPost}>전체 글 보기</S.AllPostBtn>
+          </div>
+        </S.HeaderWrapper>
         <S.BoardWrapper>
-          <S.BoardTitle>제목</S.BoardTitle>
-          <S.BoardTitle>내용</S.BoardTitle>
+          <S.BoardTitle>번호</S.BoardTitle>
+          <S.BoardTitleStyle>제목</S.BoardTitleStyle>
           <S.BoardTitle>작성날짜</S.BoardTitle>
           <S.BoardTitle>상세보기</S.BoardTitle>
         </S.BoardWrapper>
@@ -58,10 +62,13 @@ export default function Home() {
         {isActive && (
           <S.PostStyle>
             {searchPost?.map((post) => (
-              <PostList key={post.postId} post={post} />
+              <PostList key={post.postId} post={post} keyWord={keyWord} />
             ))}
           </S.PostStyle>
         )}
+        <S.SubmitBtnWrapper>
+          <S.AllPostBtn onClick={onClickSubmitBtn}>등록하기</S.AllPostBtn>
+        </S.SubmitBtnWrapper>
       </S.HomeWrapper>
     </S.Wrapper>
   );

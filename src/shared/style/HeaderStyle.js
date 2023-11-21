@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const HeaderWrapper = styled.div`
@@ -44,6 +45,7 @@ export const Logo = styled(IoLogoTux)`
   font-size: 50px;
   box-shadow: 5px 5px 5px 5px gray;
   border-radius: 20px;
+  margin-left: 100px;
   cursor: pointer;
   &:hover {
     background-color: white;
@@ -61,9 +63,7 @@ export const MypageStyle = styled.div`
 
 export const MyProfile = styled(IoPersonCircle)``;
 
-
-export const MyProfileImage = styled.img `
+export const MyProfileImage = styled.img`
   width: 50px;
   height: 50px;
-
-`
+`;
