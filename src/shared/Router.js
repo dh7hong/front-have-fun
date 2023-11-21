@@ -10,6 +10,8 @@ import Sports from "../pages/Sports";
 import Fps from "../pages/Fps";
 import Arcade from "../pages/Arcade";
 import Racing from "../pages/Racing";
+import CommentForm from "../pages/CommentForm";
+import CommentsList from "../pages/CommentsList";
 
 export default function Router() {
   return (
@@ -17,7 +19,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="api/post" element={<NewPost />} />
+          <Route path="api/posts" element={<NewPost />} />
           <Route path="/api/posts/:postId" element={<DetailedPage />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/rpg" element={<Rpg />} />

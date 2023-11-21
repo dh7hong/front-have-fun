@@ -11,6 +11,8 @@ import {
 import * as S from "../shared/style/DetailedPage";
 import { v4 as uuidv4 } from "uuid";
 import { getDate } from "../util/Date";
+import CommentForm from "./CommentForm";
+import CommentsList from "./CommentsList";
 
 export default function DetailedPage() {
   const navigate = useNavigate();
@@ -63,8 +65,6 @@ export default function DetailedPage() {
   //   mutation.mutate({ postId, LikedCount, isActive: !isActive });
   //   setIsActive(false);
   // };
-
-
 
   const moveToList = () => {
     navigate("/");
@@ -120,6 +120,8 @@ export default function DetailedPage() {
         <input onChange={onChangeComment} />
         <button onClick={onClickMakeCommentBtn}>작성하기</button>
       </div>
+      <CommentForm />
+      <CommentsList />
     </S.DetailedPageWrapper>
   );
 }
