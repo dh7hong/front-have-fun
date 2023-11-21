@@ -53,44 +53,13 @@
       "title": "몬스터 어떻게 잡아요 ???",
       "contents": "어떻게 잡을 수가 있을까요?",
       "id": 9
+    },
+    {
+      "postId": 10,
+      "title": "32343242",
+      "contents": "sdfsdfsdfds",
+      "id": 10
     }
   ],
-  "comments": [
-    {
-      "contents": "First, make the Login layout.",
-      "commentId": 1,
-      "postId": 1,
-      "userId": 2
-    },
-    {
-      "contents": "We need to code the different components of logging in.",
-      "commentId": 2,
-      "postId": 1,
-      "userId": 2
-    },
-    {
-      "contents": "Second, make the Login layout again.",
-      "commentId": 1,
-      "postId": 2,
-      "userId": 2
-    },
-    {
-      "contents": "Second, we need to code the different components of logging in.",
-      "commentId": 2,
-      "postId": 2,
-      "userId": 2
-    }
-  ],
-  "users": [
-    {
-      "username": "JohnDoe1",
-      "nickname": "se7en",
-      "userId": 1
-    },
-    {
-      "username": "Danny Hong",
-      "nickname": "powerBlogger7",
-      "userId": 2
-    }
-  ]
+  "comments": []
 }

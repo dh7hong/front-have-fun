@@ -10,18 +10,13 @@ export const commentSlice = createSlice({
   name: 'comments',
   initialState,
   reducers: {
-    addComment: {
-      reducer: (state, action) => {
-        state.comments.push(action.payload);
-      },
-      prepare: (postId, username, contents) => ({
-        payload: {
-          commentId: nextCommentId++,
-          postId,
-          username,
-          contents
-        }
-      }),
+    addComment: (state, action) => {
+      state.comments.push({
+        commentId: nextCommentId++,
+        postId: action.payload.postId,
+        username: action.payload.username,
+        contents: action.payload.contents
+      });
     },
   },
 });

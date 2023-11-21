@@ -11,7 +11,7 @@ const CommentForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addComment(postId, username, contents));
+    dispatch(addComment({postId, username, contents}));
     setUsername('');
     setContents('');
   };

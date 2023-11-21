@@ -75,17 +75,6 @@ export default function DetailedPage() {
     navigate("/");
   };
 
-  const onChangeComment = (event) => {
-    setComment(event.target.value);
-  };
-
-  const onClickMakeCommentBtn = () => {
-    const newComment = {
-      id: uuidv4(),
-      comment: comment,
-    };
-    addCommentMutation.mutate(newComment);
-  };
 
   return (
     <S.DetailedPageWrapper>
@@ -117,8 +106,6 @@ export default function DetailedPage() {
       <button onClick={deleteBtn(detailedInfo?.postId)}>삭제하기</button>
       <div>
         <h1>댓글</h1>
-        <input onChange={onChangeComment} />
-        <button onClick={onClickMakeCommentBtn}>작성하기</button>
       </div>
       <CommentForm />
       <CommentsList />
