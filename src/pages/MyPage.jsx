@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addImage } from "../redux/modules/Image";
 import { useNavigate } from "react-router-dom";
 import * as S from "../shared/style/MyPageStyle";
+import { checkValidationFile } from "../util/ImageValidation";
 
 export default function MyPage() {
   const [isActive, setIsActive] = useState(false);
@@ -21,7 +22,7 @@ export default function MyPage() {
 
   const onChangeImage = (event) => {
     const file = event.target.files?.[0];
-    if (file === undefined) {
+    if (!checkValidationFile(file)) {
       return;
       //  input 이벤트는 실행 됐으나, 실제 파일이 업로드가 되지 않은 경우  그대로 종료
     } else {
