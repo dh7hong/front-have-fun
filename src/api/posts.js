@@ -18,7 +18,7 @@ export const AddPost = async (newPost) => {
 export const getOneBoardInfo = async (postId) => {
   try {
     const response = await axios(
-      `${process.env.REACT_APP_GAME_URL}/api/posts${postId}`
+      `${process.env.REACT_APP_GAME_URL}/api/posts/${postId}`
     );
     return response;
   } catch (error) {}

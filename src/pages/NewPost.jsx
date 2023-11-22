@@ -11,6 +11,7 @@ export default function NewPost() {
   const [contents, setContents] = useState("");
   const [titleError, setTitleError] = useState("");
   const { data } = useQuery("posts", getPost);
+  console.log(`useQuery("posts", getPost) data: ${data}`)
   const dispatch = useDispatch();
   const idCount = useSelector((state) => state.count);
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ export default function NewPost() {
     };
     mutation.mutate(newPost);
     localStorage.setItem("id", idCount.count);
+    console.log(`idCount.count: ${idCount.count}`)
     dispatch(addCount());
     alert("정상적으로 등록됐습니다");
   };
