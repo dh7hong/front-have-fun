@@ -1,130 +1,53 @@
 {
   "posts": [
     {
-      "postId": 1,
-      "title": "11",
-      "contents": "11",
+      "postId": 1180558,
+      "title": "dsfdsf",
+      "contents": "sdfsdfsdfsdf",
       "id": 1
     },
     {
-      "postId": 2,
-      "title": "22",
-      "contents": "22",
+      "postId": 1203747,
+      "title": "asdsaddasdas",
+      "contents": "asdsadsdasdasdsadsaadsdsaasdasddsadas",
       "id": 2
-    },
-    {
-      "postId": 3,
-      "title": "33",
-      "contents": "33",
-      "id": 3
-    },
-    {
-      "postId": 4,
-      "title": "44",
-      "contents": "44",
-      "id": 4
-    },
-    {
-      "postId": 5,
-      "title": "55",
-      "contents": "55",
-      "id": 5
-    },
-    {
-      "postId": 6,
-      "title": "312312",
-      "contents": "3123213",
-      "id": 6
-    },
-    {
-      "postId": 7,
-      "title": "5",
-      "contents": "5",
-      "id": 7
-    },
-    {
-      "postId": 8,
-      "title": "잘 살아보세 ~",
-      "contents": "안녕 ~",
-      "id": 8
-    },
-    {
-      "postId": 11,
-      "title": "sadasd",
-      "contents": "asdasdasdasdasd",
-      "id": 11
     }
   ],
   "comments": [
     {
-      "commentId": 2111295,
-      "postId": "1",
-      "nickname": "zzz",
-      "contents": "xxxxxxxxxxxxxxxxxxx",
-      "id": 1
-    },
-    {
-      "commentId": 2269939,
-      "postId": "1",
-      "nickname": "xxxxx",
-      "contents": "zxzxzxzxzxzx",
+      "commentId": 1036961,
+      "postId": "1016470",
+      "nickname": "zxczxc",
+      "contents": "zxczxczxczxczxczxczx",
       "id": 2
     },
     {
-      "commentId": 2542703,
-      "postId": "2",
-      "nickname": "ccccc",
-      "contents": "cccccccccccccccccvvvvvvvvvvvv",
+      "commentId": 1189292,
+      "postId": "1180558",
+      "nickname": "sadfsd",
+      "contents": "dsfsdfadfda",
       "id": 3
     },
     {
-      "commentId": 2636308,
-      "postId": "2",
-      "nickname": "tttttttt",
-      "contents": "tttttttttttttttttthjjjj",
+      "commentId": 1213841,
+      "postId": "1203747",
+      "nickname": "xcczxc",
+      "contents": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       "id": 4
     },
     {
-      "commentId": 2734452,
-      "postId": "2",
-      "nickname": "xxxrrrrrrrrrr",
-      "contents": "rrrrrrrrrrrrrrrrrrrrrrrreeeeeeee",
+      "commentId": 1223701,
+      "postId": "1180558",
+      "nickname": "xzxxzxz",
+      "contents": "tytuytytrtyrt",
       "id": 5
     },
     {
-      "commentId": 2835356,
-      "postId": "2",
-      "nickname": "zxczxc",
-      "contents": "cxzczczxczx",
+      "commentId": 1234308,
+      "postId": "1203747",
+      "nickname": "dcvxcvx",
+      "contents": "xcvcxvcxzzxvzxzxxzv",
       "id": 6
-    },
-    {
-      "commentId": 2842445,
-      "postId": "2",
-      "nickname": "zxczxc",
-      "contents": "asasdsaaasdasdasd",
-      "id": 7
-    },
-    {
-      "commentId": 89579,
-      "postId": "2",
-      "nickname": "xcvxc",
-      "contents": "xcvxcvxcvxcvxcv",
-      "id": 8
-    },
-    {
-      "commentId": 131052,
-      "postId": "2",
-      "nickname": "ttttttttttt",
-      "contents": "tyyyyyyyyyyyyyyyyyyyyyyyy",
-      "id": 9
-    },
-    {
-      "commentId": 995024,
-      "postId": "1",
-      "nickname": "sxzcasc",
-      "contents": "this is a comment",
-      "id": 10
     }
   ]
 }

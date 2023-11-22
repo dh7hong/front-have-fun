@@ -6,6 +6,6 @@ export const store = configureStore({
   reducer: {
     image: imageSlice,
     count: countSlice,
-    comments: commentSlice
+    comments: commentSlice,
   },
 });

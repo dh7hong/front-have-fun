@@ -10,8 +10,6 @@ import Sports from "../pages/Sports";
 import Fps from "../pages/Fps";
 import Arcade from "../pages/Arcade";
 import Racing from "../pages/Racing";
-import CommentForm from "../pages/CommentForm";
-import CommentsList from "../pages/CommentsList";
 
 export default function Router() {
   return (

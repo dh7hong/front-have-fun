@@ -5,13 +5,13 @@ import { AddPost, getPost } from "../api/posts";
 import { useDispatch, useSelector } from "react-redux";
 import { addCount } from "../redux/modules/Count";
 import * as S from "../shared/style/NewPostStyle";
+import { v4 as uuidv4 } from "uuid";
+import { uniq } from "lodash";
 
 export default function NewPost() {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
   const [titleError, setTitleError] = useState("");
-  const { data } = useQuery("posts", getPost);
-  console.log(`useQuery("posts", getPost) data: ${data}`)
   const dispatch = useDispatch();
   const idCount = useSelector((state) => state.count);
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ export default function NewPost() {
   const onChangeTitle = (event) => {
     setTitle(event.target.value);
     const test = event.target.value;
-    if (test.length > 15) {
+    if (test?.length > 15) {
       alert("15글자까지 입력 가능합니다.");
     } else {
       setTitleError("");
@@ -36,10 +36,20 @@ export default function NewPost() {
     setContents(event.target.value);
   };
 
+  const generateUniqueId = () => {
+    let now = new Date();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    let milliseconds = now.getMilliseconds();
+
+    return minutes * 60000 + seconds * 1000 + milliseconds;
+  };
+
   const onClickSubmitBtn = () => {
     if (!title || !contents) return alert("제목과 내용을 입력하세요");
+    const uniqueId = generateUniqueId();
     const newPost = {
-      postId: data.length + 1,
+      postId: uniqueId,
       title: title,
       contents: contents,
       // likedCount: 0,
@@ -47,7 +57,6 @@ export default function NewPost() {
     };
     mutation.mutate(newPost);
     localStorage.setItem("id", idCount.count);
-    console.log(`idCount.count: ${idCount.count}`)
     dispatch(addCount());
     alert("정상적으로 등록됐습니다");
   };

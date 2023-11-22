@@ -4,6 +4,7 @@ import { AddPost, getPost } from "../api/posts";
 import * as S from "../shared/style/HomeStyle";
 import { useNavigate } from "react-router-dom";
 import PostList from "./PostList";
+import Pagination from "./Pagination";
 
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
@@ -13,11 +14,21 @@ export default function Home() {
   const navigate = useNavigate();
   const { data } = useQuery("posts", getPost);
   //data = 객체형태로 모든 값들 다있음
+  const [page, setPage] = useState(1);
+  const limit = 10;
+  const offset = (page - 1) * limit;
   const onClickSubmitBtn = () => {
     navigate("/api/posts");
   };
   const onChangeKeyWord = (event) => {
     setKeyWord(event.target.value);
+  };
+
+  const postsData = () => {
+    if (data) {
+      let result = data?.slice(offset, offset + limit);
+      return result;
+    }
   };
 
   const onClickSearchBtn = () => {
@@ -28,6 +39,8 @@ export default function Home() {
   const onClickAllPost = () => {
     setIsActive(false);
   };
+
+  console.log("data", data);
 
   return (
     <S.Wrapper>
@@ -54,7 +67,7 @@ export default function Home() {
         {/* search 기능 */}
         {!isActive && (
           <S.PostStyle>
-            {data?.map((post) => (
+            {postsData(data)?.map((post) => (
               <PostList key={post.postId} post={post} />
             ))}
           </S.PostStyle>
@@ -66,6 +79,7 @@ export default function Home() {
             ))}
           </S.PostStyle>
         )}
+        <Pagination page={page} setPage={setPage} data={data} />
         <S.SubmitBtnWrapper>
           <S.AllPostBtn onClick={onClickSubmitBtn}>등록하기</S.AllPostBtn>
         </S.SubmitBtnWrapper>
