@@ -11,6 +11,18 @@
       "title": "asdsaddasdas",
       "contents": "asdsadsdasdasdsadsaadsdsaasdasddsadas",
       "id": 2
+    },
+    {
+      "postId": 1220869,
+      "title": "q4r343",
+      "contents": "3qrqrwqreqwe",
+      "id": 3
+    },
+    {
+      "postId": 2170585,
+      "title": "my mofukin page",
+      "contents": "this is my motherfucking page niggas",
+      "id": 4
     }
   ],
   "comments": [
@@ -48,6 +60,27 @@
       "nickname": "dcvxcvx",
       "contents": "xcvcxvcxzzxvzxzxxzv",
       "id": 6
+    },
+    {
+      "commentId": 1235979,
+      "postId": "1180558",
+      "nickname": "1234124",
+      "contents": "fdsfdsfsdfs",
+      "id": 7
+    },
+    {
+      "commentId": 1682255,
+      "postId": "1180558",
+      "nickname": "dh7hong",
+      "contents": "qweqweqwe",
+      "id": 8
+    },
+    {
+      "commentId": 2198063,
+      "postId": "1180558",
+      "nickname": "laznise7en",
+      "contents": "how will this work",
+      "id": 9
     }
   ]
 }

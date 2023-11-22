@@ -23,8 +23,6 @@ export default function DetailedPage() {
   // const [likedCount, setLikedCount] = useState(0);
   const queryClient = useQueryClient();
   // const [isActive, setIsActive] = useState(false);
-  const [comment, setComment] = useState("");
-
   // useEffect(() => {
   //   if (data) {
   //     const post = data.find((post) => post.postId === parseInt(params.postId));

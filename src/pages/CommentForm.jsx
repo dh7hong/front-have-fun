@@ -22,7 +22,7 @@ const CommentForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const uniqueId = generateUniqueId();
-
+    const nickname = localStorage.getItem('userId');
     dispatch(addComment({ commentId: uniqueId, postId, nickname, contents }));
 
     const commentData = { commentId: uniqueId, postId, nickname, contents};
@@ -35,12 +35,12 @@ const CommentForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      {/* <input
         type="text"
         placeholder="Nickname"
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
-      />
+      /> */}
       <br />
       <textarea
         placeholder="Comment"

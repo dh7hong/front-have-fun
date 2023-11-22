@@ -60,6 +60,7 @@ export default function Home() {
         <S.BoardWrapper>
           <S.BoardTitle>번호</S.BoardTitle>
           <S.BoardTitleStyle>제목</S.BoardTitleStyle>
+          <S.BoardTitleStyle>작성자</S.BoardTitleStyle>
           <S.BoardTitle>작성날짜</S.BoardTitle>
           <S.BoardTitle>상세보기</S.BoardTitle>
         </S.BoardWrapper>
