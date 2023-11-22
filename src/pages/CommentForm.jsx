@@ -2,17 +2,34 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addComment } from '../redux/modules/commentSlice';
 import { useParams } from 'react-router-dom';
+import { addNewComment } from '../api/comments';
 
 const CommentForm = () => {
-  const [username, setUsername] = useState('');
+  const [nickname, setNickname] = useState('');
   const [contents, setContents] = useState('');
   const dispatch = useDispatch();
   const { postId } = useParams();
 
+  const generateUniqueId = () => {
+    let now = new Date();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    let milliseconds = now.getMilliseconds();
+
+    return minutes * 60000 + seconds * 1000 + milliseconds;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addComment({postId, username, contents}));
-    setUsername('');
+    const uniqueId = generateUniqueId();
+
+    dispatch(addComment({ commentId: uniqueId, postId, nickname, contents }));
+
+    const commentData = { commentId: uniqueId, postId, nickname, contents};
+
+    addNewComment(postId, commentData);
+
+    setNickname('');
     setContents('');
   };
 
@@ -20,9 +37,9 @@ const CommentForm = () => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Nickname"
+        value={nickname}
+        onChange={(e) => setNickname(e.target.value)}
       />
       <br />
       <textarea

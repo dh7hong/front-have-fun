@@ -49,29 +49,82 @@
       "id": 8
     },
     {
-      "postId": 9,
-      "title": "몬스터 어떻게 잡아요 ???",
-      "contents": "어떻게 잡을 수가 있을까요?",
+      "postId": 11,
+      "title": "sadasd",
+      "contents": "asdasdasdasdasd",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "commentId": 2111295,
+      "postId": "1",
+      "nickname": "zzz",
+      "contents": "xxxxxxxxxxxxxxxxxxx",
+      "id": 1
+    },
+    {
+      "commentId": 2269939,
+      "postId": "1",
+      "nickname": "xxxxx",
+      "contents": "zxzxzxzxzxzx",
+      "id": 2
+    },
+    {
+      "commentId": 2542703,
+      "postId": "2",
+      "nickname": "ccccc",
+      "contents": "cccccccccccccccccvvvvvvvvvvvv",
+      "id": 3
+    },
+    {
+      "commentId": 2636308,
+      "postId": "2",
+      "nickname": "tttttttt",
+      "contents": "tttttttttttttttttthjjjj",
+      "id": 4
+    },
+    {
+      "commentId": 2734452,
+      "postId": "2",
+      "nickname": "xxxrrrrrrrrrr",
+      "contents": "rrrrrrrrrrrrrrrrrrrrrrrreeeeeeee",
+      "id": 5
+    },
+    {
+      "commentId": 2835356,
+      "postId": "2",
+      "nickname": "zxczxc",
+      "contents": "cxzczczxczx",
+      "id": 6
+    },
+    {
+      "commentId": 2842445,
+      "postId": "2",
+      "nickname": "zxczxc",
+      "contents": "asasdsaaasdasdasd",
+      "id": 7
+    },
+    {
+      "commentId": 89579,
+      "postId": "2",
+      "nickname": "xcvxc",
+      "contents": "xcvxcvxcvxcvxcv",
+      "id": 8
+    },
+    {
+      "commentId": 131052,
+      "postId": "2",
+      "nickname": "ttttttttttt",
+      "contents": "tyyyyyyyyyyyyyyyyyyyyyyyy",
       "id": 9
     },
     {
-      "postId": 10,
-      "title": "32343242",
-      "contents": "sdfsdfsdfds",
+      "commentId": 995024,
+      "postId": "1",
+      "nickname": "sxzcasc",
+      "contents": "this is a comment",
       "id": 10
-    },
-    {
-      "postId": 11,
-      "title": "fifa anyone",
-      "contents": "anyone want to play fifa",
-      "id": 11
-    },
-    {
-      "postId": 12,
-      "title": "dancing",
-      "contents": "everyone dance",
-      "id": 12
     }
-  ],
-  "comments": []
+  ]
 }

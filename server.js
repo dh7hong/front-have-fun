@@ -24,14 +24,7 @@ server.get("/api/posts/:postId", (req, res) => {
 
 server.get("/api/posts/:postId/comments", (req, res) => {
   const postId = parseInt(req.params.postId);
-  let comments = router.db.get("comments").filter({ postId }).value();
-  comments = comments.map((comment) => {
-    const user = router.db
-      .get("users")
-      .find({ userId: comment.userId })
-      .value();
-    return { ...comment, user };
-  });
+  const comments = router.db.get("comments").filter({ postId: postId.toString() }).value();
   res.jsonp(comments);
 });
 
