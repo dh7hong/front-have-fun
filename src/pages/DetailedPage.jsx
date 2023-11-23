@@ -38,11 +38,11 @@ export default function DetailedPage() {
   //   },
   // });
 
-  const deleteMutation = useMutation(deletePost, {
-    onSuccess: () => {
-      queryClient.invalidateQueries("posts");
-    },
-  });
+  // const deleteMutation = useMutation(deletePost, {
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries("posts");
+  //   },
+  // });
 
   const detailedInfo = data?.find(
     (post) => post.postId === parseInt(params.postId)
@@ -66,10 +66,10 @@ export default function DetailedPage() {
     navigate("/");
   };
 
-  const deleteBtn = (postId) => () => {
-    deleteMutation.mutate(postId);
-    navigate("/");
-  };
+  // const deleteBtn = (postId) => () => {
+  //   deleteMutation.mutate(postId);
+  //   navigate("/");
+  // };
 
   return (
     <S.DetailedPageWrapper>
@@ -101,7 +101,7 @@ export default function DetailedPage() {
       </S.NewBoardWrapper>
       <S.ButtonWrapper>
         <Button onClick={moveToList}>목록으로</Button>
-        <Button onClick={deleteBtn(detailedInfo?.postId)}>삭제하기</Button>
+        {/* <Button onClick={deleteBtn(detailedInfo?.postId)}>삭제하기</Button> */}
       </S.ButtonWrapper>
       <div>
         <h2 style={{ color: "white" }}>댓글</h2>
