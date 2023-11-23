@@ -5,6 +5,12 @@ const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
 // Use CORS middleware
+// const corsOptions = {
+//   origin: 'http://front-have-fun.s3-website.ap-northeast-2.amazonaws.com', // Replace with your frontend domain
+//   optionsSuccessStatus: 200,
+// };
+// server.use(cors(corsOptions));
+
 server.use(cors());
 
 server.get("/api", (req, res) => {
