@@ -1,5 +1,5 @@
 import axios from "axios";
-import {store} from "../redux/config/configStore";
+import { store } from "../redux/config/configStore";
 import { setToken, setUserId } from "../redux/modules/userSlice";
 
 const catchErrors = (error) => {
@@ -19,7 +19,6 @@ const catchErrors = (error) => {
 };
 
 const registerUser = async (userData) => {
-  
   try {
     const response = await axios.post(
       `${process.env.REACT_APP_SERVER_URL}/register`,
@@ -40,14 +39,14 @@ const loginUser = async (userData) => {
     );
 
     const token = response.data.token;
-    console.log(response)
+    console.log(response);
     const userId = JSON.parse(response.config.data).id;
 
-    localStorage.setItem('token', token); // Use 'token' as the key
-    localStorage.setItem('userId', userId); // Use 'userId' as the key
+    localStorage.setItem("token", token); // Use 'token' as the key
+    localStorage.setItem("userId", userId); // Use 'userId' as the key
     store.dispatch(setToken(token));
     store.dispatch(setUserId(userId)); // Dispatch userId to Redux store
-    
+
     return { token, userId };
   } catch (error) {
     catchErrors(error);

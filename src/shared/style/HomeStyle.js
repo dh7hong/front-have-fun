@@ -15,10 +15,11 @@ export const HomeWrapper = styled.div`
 
 export const BoardWrapper = styled.div`
   width: 1028px;
-  background-color: rgb(255, 229, 229);
+  background-color: rgb(54, 48, 98);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: 2px solid black;
 `;
 
 export const BoardTitle = styled.span`
@@ -26,6 +27,8 @@ export const BoardTitle = styled.span`
   height: 50px;
   text-align: center;
   line-height: 50px;
+  font-weight: bolder;
+  color: white;
 `;
 
 export const BoardTitleStyle = styled.div`
@@ -33,6 +36,8 @@ export const BoardTitleStyle = styled.div`
   height: 50px;
   text-align: center;
   line-height: 50px;
+  font-weight: bolder;
+  color: white;
 `;
 
 export const PostStyle = styled.div`

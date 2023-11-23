@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addComment } from '../redux/modules/commentSlice';
-import { useParams } from 'react-router-dom';
-import { addNewComment } from '../api/comments';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addComment } from "../redux/modules/commentSlice";
+import { useParams } from "react-router-dom";
+import { addNewComment } from "../api/comments";
+import * as S from "../shared/style/CommentStyle";
+import { Button } from "../components/button";
 
 const CommentForm = () => {
-  const [nickname, setNickname] = useState('');
-  const [contents, setContents] = useState('');
+  const [nickname, setNickname] = useState("");
+  const [contents, setContents] = useState("");
   const dispatch = useDispatch();
   const { postId } = useParams();
 
@@ -22,15 +24,15 @@ const CommentForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const uniqueId = generateUniqueId();
-    const nickname = localStorage.getItem('userId');
+    const nickname = localStorage.getItem("userId");
     dispatch(addComment({ commentId: uniqueId, postId, nickname, contents }));
 
-    const commentData = { commentId: uniqueId, postId, nickname, contents};
+    const commentData = { commentId: uniqueId, postId, nickname, contents };
 
     addNewComment(postId, commentData);
 
-    setNickname('');
-    setContents('');
+    setNickname("");
+    setContents("");
   };
 
   return (
@@ -42,13 +44,16 @@ const CommentForm = () => {
         onChange={(e) => setNickname(e.target.value)}
       /> */}
       <br />
-      <textarea
-        placeholder="Comment"
-        value={contents}
-        onChange={(e) => setContents(e.target.value)}
-      />
-      <br />
-      <button type="submit">Add Comment</button>
+      <S.CommentWrapper>
+        <textarea
+          placeholder="Comment"
+          value={contents}
+          onChange={(e) => setContents(e.target.value)}
+        />
+
+        <br />
+        <Button type="submit">Add Comment</Button>
+      </S.CommentWrapper>
     </form>
   );
 };

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { AddPost, getPost } from "../api/posts";
 import * as S from "../shared/style/HomeStyle";
 import { useNavigate } from "react-router-dom";
 import PostList from "./PostList";
 import Pagination from "./Pagination";
+import { Button } from "../components/button";
+import axios from "axios";
 
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
@@ -46,21 +48,21 @@ export default function Home() {
     <S.Wrapper>
       <S.HomeWrapper>
         <S.HeaderWrapper>
-          <h2> 자유게시판 </h2>
           <div>
             <S.SearchInput
               value={keyWord}
               onChange={onChangeKeyWord}
               placeholder="제목을 입력해주세요"
             />
-            <S.AllPostBtn onClick={onClickSearchBtn}>검색</S.AllPostBtn>
-            <S.AllPostBtn onClick={onClickAllPost}>전체 글 보기</S.AllPostBtn>
+            <Button onClick={onClickSearchBtn}>검색</Button>
+            <Button onClick={onClickAllPost}>전체 글 보기</Button>
+            <Button onClick={onClickSubmitBtn}>등록하기</Button>
           </div>
         </S.HeaderWrapper>
         <S.BoardWrapper>
           <S.BoardTitle>번호</S.BoardTitle>
           <S.BoardTitleStyle>제목</S.BoardTitleStyle>
-          <S.BoardTitleStyle>작성자</S.BoardTitleStyle>
+          <S.BoardTitle>작성자</S.BoardTitle>
           <S.BoardTitle>작성날짜</S.BoardTitle>
           <S.BoardTitle>상세보기</S.BoardTitle>
         </S.BoardWrapper>
@@ -81,9 +83,6 @@ export default function Home() {
           </S.PostStyle>
         )}
         <Pagination page={page} setPage={setPage} data={data} />
-        <S.SubmitBtnWrapper>
-          <S.AllPostBtn onClick={onClickSubmitBtn}>등록하기</S.AllPostBtn>
-        </S.SubmitBtnWrapper>
       </S.HomeWrapper>
     </S.Wrapper>
   );

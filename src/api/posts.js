@@ -10,7 +10,6 @@ export const AddPost = async (newPost) => {
     return response.data;
   } catch (error) {
     if (error.response) {
-      //보류
     }
   }
 };

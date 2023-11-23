@@ -6,8 +6,8 @@ import Banner from "./Banner";
 import Navigation from "./Navigation";
 
 export default function Layout() {
-  const {pathname} = useLocation();
-  const isMyPage = pathname === "/mypage";
+  const { pathname } = useLocation();
+  const isMyPage = pathname === "/api/posts";
   return (
     <div
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}

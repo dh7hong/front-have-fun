@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 import { getDate } from "../util/Date";
 import CommentForm from "./CommentForm";
 import CommentsList from "./CommentsList";
+import { Button } from "../components/button";
 
 export default function DetailedPage() {
   const navigate = useNavigate();
@@ -70,12 +71,13 @@ export default function DetailedPage() {
     navigate("/");
   };
 
-
   return (
     <S.DetailedPageWrapper>
-      <h2>게시물 등록</h2>
+      <h2 style={{ color: "white" }}>게시물 등록</h2>
       <S.NewBoardWrapper>
+        <h2>제목</h2>
         <S.TitleStyle>{detailedInfo?.title}</S.TitleStyle>
+        <h2>내용</h2>
         <S.ContentsStyle> {detailedInfo?.contents}</S.ContentsStyle>
         {/* <S.ThumbsWrapper>
           {!isActive && (
@@ -97,10 +99,12 @@ export default function DetailedPage() {
         </S.ThumbsWrapper>
         좋아요 개수 : {detailedInfo?.likedCount} */}
       </S.NewBoardWrapper>
-      <button onClick={moveToList}>목록으로</button>
-      <button onClick={deleteBtn(detailedInfo?.postId)}>삭제하기</button>
+      <S.ButtonWrapper>
+        <Button onClick={moveToList}>목록으로</Button>
+        <Button onClick={deleteBtn(detailedInfo?.postId)}>삭제하기</Button>
+      </S.ButtonWrapper>
       <div>
-        <h1>댓글</h1>
+        <h2 style={{ color: "white" }}>댓글</h2>
       </div>
       <CommentForm />
       <CommentsList />

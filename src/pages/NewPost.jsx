@@ -7,6 +7,7 @@ import { addCount } from "../redux/modules/Count";
 import * as S from "../shared/style/NewPostStyle";
 import { v4 as uuidv4 } from "uuid";
 import { uniq } from "lodash";
+import { Button } from "../components/button";
 
 export default function NewPost() {
   const [title, setTitle] = useState("");
@@ -48,7 +49,7 @@ export default function NewPost() {
   const onClickSubmitBtn = () => {
     if (!title || !contents) return alert("제목과 내용을 입력하세요");
     const uniqueId = generateUniqueId();
-    const nickname = localStorage.getItem('userId');
+    const nickname = localStorage.getItem("userId");
     const newPost = {
       postId: uniqueId,
       title: title,
@@ -69,20 +70,32 @@ export default function NewPost() {
   return (
     <S.NewPostWrapper>
       <S.InputWrapper>
-        <S.TitleWrapper>
-          <label>제목</label>
-          <S.TitleInput maxLength={15} onChange={onChangeTitle} />
-          <span>{titleError}</span>
-        </S.TitleWrapper>
-        <S.ContentsWrapper>
-          <label>내용</label>
-          <S.ContentsInput onChange={onChangeContents} />
-        </S.ContentsWrapper>
+        <S.TitleBox>
+          <S.Title>New Post</S.Title>
+        </S.TitleBox>
+        <S.ContentsBody>
+          <S.TitleWrapper>
+            <h3>제목</h3>
+            <S.TitleInput
+              placeholder="제목을 입력하세요"
+              maxLength={15}
+              onChange={onChangeTitle}
+            />
+            <span>{titleError}</span>
+          </S.TitleWrapper>
+          <S.ContentsWrapper>
+            <h3>내용</h3>
+            <S.ContentsInput
+              placeholder="내용을 입력하세요"
+              onChange={onChangeContents}
+            />
+          </S.ContentsWrapper>
+        </S.ContentsBody>
+        <S.ButtonWrapper>
+          <Button onClick={onClickSubmitBtn}>등록하기</Button>
+          <Button onClick={moveToBoard}>목록가기</Button>
+        </S.ButtonWrapper>
       </S.InputWrapper>
-      <S.ButtonWrapper>
-        <S.Button onClick={onClickSubmitBtn}>등록하기</S.Button>
-        <S.Button onClick={moveToBoard}>목록가기</S.Button>
-      </S.ButtonWrapper>
     </S.NewPostWrapper>
   );
 }

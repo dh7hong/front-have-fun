@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import * as S from "../shared/style/HeaderStyle";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useMutation } from 'react-query';
-import { useDispatch } from 'react-redux';
-import { logout } from '../redux/modules/userSlice';
-import { authUser } from '../api/authService';
-import axios from 'axios';
+import { useMutation } from "react-query";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/modules/userSlice";
+import { authUser } from "../api/authService";
+import axios from "axios";
+import { Button } from "../components/button";
 
 export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,19 +21,19 @@ export default function Header() {
 
   const { mutate: auth } = useMutation(authUser);
 
-  const handleAuth = event => {
+  const handleAuth = (event) => {
     event.preventDefault();
     auth();
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
-    delete axios.defaults.headers.common['Authorization'];
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    delete axios.defaults.headers.common["Authorization"];
     dispatch(logout());
     setIsLoggedIn(false);
-    console.log(isLoggedIn)
-    navigate('/login'); // Navigate to login page on logout
+    console.log(isLoggedIn);
+    navigate("/login"); // Navigate to login page on logout
   };
 
   const moveToHome = () => {
@@ -78,8 +79,8 @@ export default function Header() {
           )}
           {isActive && (
             <S.MypageStyle>
-              <button onClick={moveToMyPage}>마이페이지</button>
-              <button onClick={handleLogout}>로그아웃</button>
+              <Button onClick={moveToMyPage}>마이페이지</Button>
+              <Button onClick={handleLogout}>로그아웃</Button>
             </S.MypageStyle>
           )}
         </S.MyProfileStyle>

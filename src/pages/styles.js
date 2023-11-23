@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  background: #c9d6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e2e2e2,
+    #c9d6ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    45deg,
-    rgba(66, 183, 245, 0.8) 0%,
-    rgba(66, 245, 189, 0.4) 100%
-  ); 
+    to right,
+    #e2e2e2,
+    #c9d6ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +33,7 @@ const BoxStyle = styled.div`
   width: 800px;
   height: 600px;
   padding: 24px;
-  position: relative; 
+  position: relative;
   display: flex;
   justify-content: center;
   border-radius: 20px;

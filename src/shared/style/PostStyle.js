@@ -12,6 +12,7 @@ export const Row = styled.span`
   height: 50px;
   text-align: center;
   line-height: 50px;
+  color: black;
 `;
 
 export const RowStyle = styled.div`
@@ -19,6 +20,7 @@ export const RowStyle = styled.div`
   display: flex;
   justify-content: space-around;
   border-bottom: 2px solid black;
+  background-color: white;
 `;
 
 export const detailedBtnWrapper = styled.div`
@@ -32,4 +34,5 @@ export const RowTitle = styled.span`
   height: 50px;
   text-align: center;
   line-height: 50px;
+  color: black;
 `;

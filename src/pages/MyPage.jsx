@@ -5,6 +5,7 @@ import { addImage } from "../redux/modules/Image";
 import { useNavigate } from "react-router-dom";
 import * as S from "../shared/style/MyPageStyle";
 import { checkValidationFile } from "../util/ImageValidation";
+import { Button } from "../components/button";
 
 export default function MyPage() {
   const [isActive, setIsActive] = useState(false);
@@ -50,7 +51,9 @@ export default function MyPage() {
   return (
     <S.Wrapper>
       <S.MyPageWrapper>
-        <h2>My Page</h2>
+        <S.TitleWrapper>
+          <S.Title>My Page</S.Title>
+        </S.TitleWrapper>
         <div>Profile image</div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
@@ -68,10 +71,10 @@ export default function MyPage() {
               />
             )}
           </div>
-          <button type="button" onClick={onClickImageBtn}>
+          <Button type="button" onClick={onClickImageBtn}>
             이미지 업로드
-          </button>
-          <button onClick={onClickSubmitBtn}>수정하기</button>
+          </Button>
+          <Button onClick={onClickSubmitBtn}>수정하기</Button>
         </div>
         <input
           style={{ display: "none" }}

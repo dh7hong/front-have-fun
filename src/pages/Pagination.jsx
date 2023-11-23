@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "../components/button";
 
 export default function Pagination({ page, setPage, data }) {
   const postsPerPage = 10;
@@ -30,13 +31,13 @@ export default function Pagination({ page, setPage, data }) {
   console.log("pageList", pageList);
   return (
     <div>
-      <button onClick={moveToPrevPage}>prev</button>
+      <Button onClick={moveToPrevPage}>prev</Button>
       {pageList.map((page, index) => (
-        <button id={index} onClick={onClickPageBtn(page)} key={page}>
+        <Button id={index} onClick={onClickPageBtn(page)} key={page}>
           {page}
-        </button>
+        </Button>
       ))}
-      <button onClick={moveToNextPage}>next</button>
+      <Button onClick={moveToNextPage}>next</Button>
     </div>
   );
 }

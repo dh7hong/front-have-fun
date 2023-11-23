@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const BigWrapper = styled.div`
-  width: 80%;
+  width: 100%;
   height: 17vh;
-  background-color: rgb(229, 212, 255);
+  background-color: rgb(54, 48, 98);
 `;
