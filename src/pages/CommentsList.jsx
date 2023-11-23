@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getCommentsByPostId } from '../api/comments';
-import { setComments } from '../redux/modules/commentSlice';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getCommentsByPostId } from "../api/comments";
+import { setComments } from "../redux/modules/commentSlice";
+import { getDateTime } from "../util/DateTime";
 
 const CommentsList = () => {
   const { postId } = useParams();
@@ -23,7 +24,8 @@ const CommentsList = () => {
     <div>
       {comments.map((comment) => (
         <div key={comment.commentId}>
-          <strong>{comment.nickname}:</strong> {comment.contents} {comment.commentId}
+          <strong>{comment.nickname}:</strong> {comment.contents}{" "}
+          {comment.commentId}
         </div>
       ))}
     </div>

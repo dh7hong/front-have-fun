@@ -18,6 +18,7 @@ function Register() {
     alert(`Thanks for signing up! ${id}`);
     setId('');
     setPassword('');
+    navigate(`/login`);
   };
 
   const handleLoginPageButtonClick = () => {
