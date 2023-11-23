@@ -8,7 +8,6 @@ export default function PostList({ post, keyWord }) {
   const moveToDetailedPage = (postId) => () => {
     navigate(`api/posts/${postId}`);
   };
-  const nickname = localStorage.getItem("userId");
 
   return (
     <S.PostStyle>
@@ -27,7 +26,7 @@ export default function PostList({ post, keyWord }) {
               </span>
             ))}
         </S.RowTitle>
-        <S.Row>{nickname}</S.Row>
+        <S.Row>{post.nickname}</S.Row>
         <S.Row>{getDate()}</S.Row>
         <S.detailedBtnWrapper>
           <button onClick={moveToDetailedPage(post.postId)}>상세보기</button>

@@ -48,10 +48,12 @@ export default function NewPost() {
   const onClickSubmitBtn = () => {
     if (!title || !contents) return alert("제목과 내용을 입력하세요");
     const uniqueId = generateUniqueId();
+    const nickname = localStorage.getItem('userId');
     const newPost = {
       postId: uniqueId,
       title: title,
       contents: contents,
+      nickname: nickname,
       // likedCount: 0,
       // isActive: false,
     };

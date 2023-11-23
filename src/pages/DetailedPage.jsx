@@ -43,9 +43,6 @@ export default function DetailedPage() {
     },
   });
 
-  const addCommentMutation = useMutation(addComment, {
-    onSuccess: () => {},
-  });
   const detailedInfo = data?.find(
     (post) => post.postId === parseInt(params.postId)
   );
