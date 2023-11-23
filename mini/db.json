@@ -1,0 +1,90 @@
+{
+  "posts": [
+    {
+      "postId": 2036365,
+      "title": "asd",
+      "contents": "asdsadasd",
+      "nickname": "uiop3996",
+      "id": 1
+    },
+    {
+      "postId": 2300747,
+      "title": "안녕하세요",
+      "contents": "페이커가 되고 싶어요",
+      "nickname": "wncjfals",
+      "id": 2
+    },
+    {
+      "postId": 2335711,
+      "title": "maple ~~maple~~",
+      "contents": "메이플스토리",
+      "nickname": "wncjfals",
+      "id": 3
+    },
+    {
+      "postId": 2535740,
+      "title": "ㅂㅈㄷ",
+      "contents": "ㅂㅈㄷ",
+      "nickname": "cjfalscjfals",
+      "id": 4
+    },
+    {
+      "postId": 2586090,
+      "title": "ㅂㅈㄷ",
+      "contents": "ㅂㅈㄷ",
+      "nickname": "cjfalscjfals",
+      "id": 5
+    },
+    {
+      "postId": 2873950,
+      "title": "ㅛ서",
+      "contents": "ㅛ서ㅛ서ㅛ서",
+      "nickname": "cjfalscjfals",
+      "id": 6
+    },
+    {
+      "postId": 1324589,
+      "title": "123",
+      "contents": "123123",
+      "nickname": "uiop3996",
+      "id": 7
+    },
+    {
+      "postId": 2016183,
+      "title": "ㅗ허",
+      "contents": "ㅗ허ㅗ허ㅗ허호ㅓ",
+      "nickname": "uiop3996",
+      "id": 8
+    },
+    {
+      "postId": 809699,
+      "title": "ㅁㄴㅇ",
+      "contents": "123123ㅁㄴㅇㅁㄴㅇㅁㄴㅇ",
+      "nickname": "uiop3996",
+      "id": 9
+    },
+    {
+      "postId": 2397218,
+      "title": "asdas",
+      "contents": "dasdasd",
+      "nickname": "cjfalscjfals",
+      "id": 10
+    },
+    {
+      "postId": 2409156,
+      "title": "asd",
+      "contents": "asdasd",
+      "nickname": "cjfalscjfals",
+      "id": 11
+    }
+  ],
+  "comments": [
+    {
+      "commentId": 3100636,
+      "postId": "2335711",
+      "nickname": "uiop3996",
+      "contents": "안녕하십니까요",
+      "id": 1
+    }
+  ]
+}

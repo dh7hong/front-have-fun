@@ -1,0 +1,67 @@
+// db.json
+{
+  "api": {
+    "posts": [
+      {
+        "title": "My first post",
+        "contents": "This is the body of the post",
+        "postId": 1,
+        "user": {
+          "username": "JohnDoe1",
+          "nickname": "se7en",
+          "userId": 1
+        },
+        "comments": [
+          {
+            "contents": "First, make the Login layout.",
+            "commentId": 1,
+            "user": {
+              "username": "Danny Hong",
+              "nickname": "powerBlogger7",
+              "userId": 2
+            }
+          },
+          {
+            "contents": "We need to code the different components of logging in.",
+            "commentId": 2,
+            "user": {
+              "username": "Danny Kim",
+              "nickname": "powerRanger7",
+              "userId": 2
+            }
+          }
+        ]
+      },
+      {
+        "title": "My second post",
+        "contents": "This is the body of the second post",
+        "postId": 2,
+        "user": {
+          "username": "JohnDoe2",
+          "nickname": "se7en2",
+          "userId": 2
+        },
+        "comments": [
+          {
+            "contents": "First, make the Login layout.",
+            "commentId": 1,
+            "user": {
+              "username": "Danny Hong",
+              "nickname": "powerBlogger7",
+              "userId": 2
+            }
+          },
+          {
+            "contents": "We need to code the different components of logging in.",
+            "commentId": 2,
+            "user": {
+              "username": "Danny Kim",
+              "nickname": "powerRanger7",
+              "userId": 2
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
